@@ -1,0 +1,269 @@
+/* Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f7fa;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+.disclaimer {
+    text-align: center;
+    color: #e74c3c;
+    font-weight: bold;
+    margin-bottom: 30px;
+    padding: 10px;
+    background-color: #ffeeee;
+    border-radius: 5px;
+}
+
+/* Form Styles */
+.form-container {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.form-section {
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.form-section h3 {
+    color: #3498db;
+    margin-bottom: 15px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.amount-input {
+    display: flex;
+    gap: 10px;
+}
+
+.amount-input select {
+    width: 80px;
+}
+
+.amount-input input {
+    flex: 1;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+#generateBtn {
+    background-color: #3498db;
+    color: white;
+}
+
+#generateBtn:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+}
+
+#resetBtn {
+    background-color: #95a5a6;
+    color: white;
+}
+
+#resetBtn:hover {
+    background-color: #7f8c8d;
+    transform: translateY(-2px);
+}
+
+/* Receipt Styles */
+.receipt-container {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    max-width: 650px;
+    margin: 0 auto;
+    border: 1px solid #ddd;
+}
+
+.watermark {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-30deg);
+    font-size: 72px;
+    font-weight: bold;
+    color: rgba(231, 76, 60, 0.1);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.receipt-header {
+    text-align: center;
+    margin-bottom: 25px;
+    position: relative;
+    z-index: 1;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.bank-logo {
+    margin-bottom: 15px;
+}
+
+.logo-placeholder {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    background-color: #3498db;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 50%;
+}
+
+.receipt-header h2 {
+    color: #2c3e50;
+    margin-bottom: 5px;
+}
+
+.receipt-number {
+    font-size: 14px;
+    color: #7f8c8d;
+    margin-bottom: 5px;
+}
+
+.receipt-details {
+    margin-bottom: 20px;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px dashed #eee;
+}
+
+.detail-label {
+    font-weight: 600;
+    color: #2c3e50;
+    min-width: 120px;
+}
+
+.detail-value {
+    color: #34495e;
+    text-align: right;
+    flex: 1;
+}
+
+.section-title {
+    font-weight: bold;
+    color: #3498db;
+    margin: 20px 0 10px;
+    padding-top: 15px;
+    border-top: 2px solid #eee;
+}
+
+.status-completed {
+    color: #27ae60;
+    font-weight: bold;
+}
+
+.receipt-footer {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 2px solid #eee;
+}
+
+.disclaimer-box {
+    background-color: #fff8e1;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 13px;
+    color: #e67e22;
+}
+
+#printReceiptBtn {
+    background-color: #2ecc71;
+    color: white;
+    margin-top: 15px;
+    width: 200px;
+}
+
+#printReceiptBtn:hover {
+    background-color: #27ae60;
+    transform: translateY(-2px);
+}
+
+.hidden {
+    display: none;
+}
+
+@media print {
+    .form-container, .disclaimer, button {
+        display: none;
+    }
+    .receipt-container {
+        box-shadow: none;
+        border: none;
+    }
+    .watermark {
+        opacity: 0.2;
+    }
+}
